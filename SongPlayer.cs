@@ -16,7 +16,7 @@ namespace beeper
         /// <param name="song"></param>
         public void Play(Song song)
         {
-        	// TODO: can you multithread and harmonize?
+            // TODO: can you multithread and harmonize?
             foreach (Note note in song.Notes)
                 Console.Beep(note.Frequency, note.Duration);
         }

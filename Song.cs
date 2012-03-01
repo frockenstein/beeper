@@ -42,15 +42,15 @@ namespace beeper
         public void Add(string noteName, string noteLength)
         {
             int duration = GetNoteDuration(noteLength);
-        	Add(noteName, duration);
+            Add(noteName, duration);
         }
         
         void GetNoteDuration(string noteLength)
         {
-        	// duration stuff is here 'cause it's really the song's
-        	// job, via tempo, to determine the duration of a note
-        	int duration = DefaultDuration;
-        	switch (noteLength.ToUpper())
+            // duration stuff is here 'cause it's really the song's
+            // job, via tempo, to determine the duration of a note
+            int duration = DefaultDuration;
+            switch (noteLength.ToUpper())
             {
                 // TODO: these case labels are magic strings and should be enums
                 case "1/16": duration = (int)(duration * .25); break;

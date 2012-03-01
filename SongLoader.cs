@@ -9,7 +9,7 @@ namespace beeper
     public class SongLoader
     {
         // loads a random *.song file
-    	public static Song LoadRandom()
+        public static Song LoadRandom()
         {
             FileInfo[] files = new DirectoryInfo(Environment.CurrentDirectory).GetFiles("*.song");
             int index = new Random().Next(0, files.Length);
@@ -19,15 +19,15 @@ namespace beeper
 
         public static Song Load(string name)
         {
-        	string filePath = Path.Combine(Environment.CurrentDirectory, name + ".song");
+            string filePath = Path.Combine(Environment.CurrentDirectory, name + ".song");
             if (!File.Exists(filePath))
                 throw new FileNotFoundException("We don't be knowin' this ditty: " + filePath, filePath);
 
-			// lotta room for improvement here... the idea is to make a text file 
-			// that's easy for humans to monkey with, even if the code to read it
-			// is ugly - yaml might be another option
+            // lotta room for improvement here... the idea is to make a text file 
+            // that's easy for humans to monkey with, even if the code to read it
+            // is ugly - yaml might be another option
                         
-			string[] lines = File.ReadAllLines(filePath);
+            string[] lines = File.ReadAllLines(filePath);
             Song song = new Song();
             foreach (string line in lines)
             {
