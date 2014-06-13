@@ -45,7 +45,7 @@ namespace beeper
             Add(noteName, duration);
         }
         
-        void GetNoteDuration(string noteLength)
+        int GetNoteDuration(string noteLength)
         {
             // duration stuff is here 'cause it's really the song's
             // job, via tempo, to determine the duration of a note
